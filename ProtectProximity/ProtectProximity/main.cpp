@@ -16,7 +16,7 @@ int main()
 	TestTrainGenerator t;
 	Train2dGenerator* st2dg = new SimpleTrain2dGenerator();
 	t.testTrainGenerator(*st2dg);
-	Train2d *train = st2dg->generate(5, 20);
+	Train2d *train = st2dg->generate(5, 21);
 	
 	
 	

@@ -33,21 +33,31 @@ Train2d::Train2d(int columns, int rows)
 	{
 		for (int j = 0; j < c; j++)
 		{
-			if (i == 0 || i == r - 1 || j == 2)
+			/*if (i == 0 || i == r - 1 || j == 2 || (i % 4 == 3 && j == 1) || (i % 4 == 3 && j == 3))
 			{
 				m_vect_mat[i][j].value = 0;
 				m_vect_mat[i][j].x = i;
 				m_vect_mat[i][j].y = j;
-			}
-			if ((i > 1 && j != 2 && i < r - 2))
+			}*/
+			if ((i % 2 == 0 && j != 2 && i < r - 2))
 			{
 				m_vect_mat[i][j].value = 1;
 				m_vect_mat[i][j].x = i;
 				m_vect_mat[i][j].y = j;
+				continue;
 			}
-			if ((i == 1 && j != 2) || (i == r - 2 && j != 2))
+			if (/*(i == 1 && j != 2) || (i == r - 2 && j != 2) ||
+				(i % 4 == 1 && (j == 1 || j == 3)) ||*/
+				((i % 2 == 1 && i > 0 && i < r - 1) && (j == 0 || j == 1 || j == 3 || j == 4)))
 			{
 				m_vect_mat[i][j].value = 3;
+				m_vect_mat[i][j].x = i;
+				m_vect_mat[i][j].y = j;
+				continue;
+			}
+			else
+			{
+				m_vect_mat[i][j].value = 0;
 				m_vect_mat[i][j].x = i;
 				m_vect_mat[i][j].y = j;
 			}

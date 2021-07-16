@@ -14,11 +14,11 @@ public:
 	void testTrainGenerator(Train2dGenerator& tg)
 	{
 		// prints the time it takes the algorithm to run
-		tg.measureAlgorithmTime(5, 20);
+		tg.measureAlgorithmTime(5, 23);
 		cout << tg << endl;
 
 		// generate another 2d maze
-		Train2d* train = tg.generate(5, 20);
+		Train2d* train = tg.generate(5, 23);
 
 		// get the maze entrance
 		Position p = train->getGoalPosition();
